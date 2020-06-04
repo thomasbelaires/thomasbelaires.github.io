@@ -1,59 +1,2794 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home - thomasbelaires.github.io</title>
-	<style>
-	@import url(https://fonts.googleapis.com/css?family=Raleway:700);
 
-	*, *:before, *:after {
-		box-sizing: border-box;
-	}
+<html id="html">
 
-	html {
-		height: 100%;
-	}
+<head><meta charset="utf-8" /><title>
+	Browse Book Lists | List Challenges
+</title>
 
-	body {
-		background-size: cover;
-		font-family: 'Raleway', sans-serif;
-		background-color: #f4f4f4; 
-		height: 100%;
-	}
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400|Roboto" rel="stylesheet">
+		
 
-	.text-wrapper {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 4em;
-		font-weight: 700;
-		color: #333;
-	}
-
-	.subtitle {
-		font-size: 16px;
-		font-weight: 700;
-		color: #888;
-		text-align: center;
-	}
-	</style>
+		<link href="/bundles/app-styles?v=mPuvIcn5eJezPZcXDEkfpV5bQoIZLfRQdFvynQSeP941" rel="stylesheet"/>
+<link href="/favicon.png" rel="icon" type="image/png" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><meta property="og:type" content="article" />
+<meta property="og:title" content="Browse Book Lists | List Challenges" />
+<meta name="description" content="Browse all 19,223 Book lists on List Challenges" />
+<meta property="og:description" content="Browse all 19,223 Book lists on List Challenges" />
+<link rel="apple-touch-icon" href="/i/logo-big.png" />
+<link rel="image_src" href="https://www.listchallenges.com/i/logo-big.png" />
+<meta property="og:image" content="https://www.listchallenges.com/i/logo-big.png" />
+<meta property="fb:app_id" content="253841154742565" />
+<meta property="og:site_name" content="List Challenges" />
 </head>
-<body>
-	<div class="text-wrapper">
-		<div class="title" data-content="404">
-			Under Construction
+
+<body id="body">
+
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-27080120-2', 'listchallenges.com');
+			ga('require', 'displayfeatures');
+			ga('send', 'pageview');
+		</script>
+	
+	
+	
+
+	<div class="backdrop" onclick="app.backdropClick();" style="visibility:hidden"></div>
+	<div class="toast"></div>
+	
+
+<header class="header shadow-4">
+	<div class="header-content">
+		<div class="header-button header-buttonMenu" onclick="header.menuButtonClick()">
+			<span class="visible-IE glyphicon glyphicon-menu-hamburger"></span>
+			<span class="hidden-IE">
+				<i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-list"></use></svg></i>
+			</span>
+		</div>
+		<div class="header-titleWrapper">
+			<a class="header-button header-title" href="/">
+				<img src="/i/logo-title.png" alt="List Challenges" />
+			</a>
+		</div>
+		<div class="flex-grow1 hidden-xs hidden-sm"></div>
+		<a class="header-button header-buttonCategory"
+			href="/travel"
+			data-category="travel">
+			<span class="button-text">Travel</span>
+			<span class="caret"></span>
+		</a>
+		<a class="header-button header-buttonCategory"
+			href="/movies"
+			data-category="movies">
+			<span class="button-text">Movies</span>
+			<span class="caret"></span>
+		</a>
+		<a class="header-button header-buttonCategory"
+			href="/books"
+			data-category="books">
+			<span class="button-text">Books</span>
+			<span class="caret"></span>
+		</a>
+		<a class="header-button header-buttonCategory"
+			href="/food"
+			data-category="food">
+			<span class="button-text">Food</span>
+			<span class="caret"></span>
+		</a>
+		<a data-category="other" class="header-button header-buttonCategory"
+			href="/other">
+			<span class="button-text">Other</span>
+			<span class="caret"></span>
+		</a>
+		<div class="flex-grow1"></div>
+			
+		
+		<form id="formSearch" action="/lists/search" method="get" class="header-search">
+			<input autocomplete="off" type="search" maxlength="100" placeholder="search lists" name="s" />
+			<i class="svgIcon header-clearSearch"><svg><use xlink:href="/i/icons.svg#icon-x-button"></use></svg></i>
+			<i class="svgIcon header-openSearch"><svg><use xlink:href="/i/icons.svg#icon-search"></use></svg></i>
+		</form>
+
+		<div class="flex-grow1 hidden-xs"></div>
+	
+		<a class="header-button" href="/sign-in">
+				Sign In
+		</a>
+	
+	</div>
+
+	<div class="header-listsDropDown flexRow">
+		<div>
+			<div class="header-buttonSort selected"
+				onclick="header.redirectToCurrentHeaderSelection();"
+				data-sort="trending">
+				<span class="glyphicon glyphicon-arrow-up "></span> Trending
+			</div>
+			<div class="header-buttonSort"
+				 onclick="header.redirectToCurrentHeaderSelection();"
+				 data-sort="new">
+				<span class="glyphicon glyphicon-time "></span> New
+			</div>
+			<div class="header-buttonSort"
+				onclick="header.redirectToCurrentHeaderSelection();"
+				data-sort="popular">
+				<span class="glyphicon glyphicon-user "></span> Popular
+			</div>
+		</div>
+		<div class="header-listsByCategory header-lists flex-grow1"></div>
+	</div>
+
+	<div class="header-lists header-searchResults">
+		<div class="message">type to search</div>
+	</div>
+
+</header>
+
+<div class="menu shadow-8">
+	
+	
+		<a class="menu-link menu-linkFeature menu-linkSignIn" href="/sign-in">
+			<img src="/f/users/default.png" />
+			<div>Sign In</div>
+		</a>
+	
+	<a class="menu-link" href="/create-list"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-add"></use></svg></i> Make a List</a>
+	<a class="menu-link" href="/lists/all/trending"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-todo-list"></use></svg></i> Browse Lists</a>
+	<a class="menu-link" href="/lists/search"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-search"></use></svg></i> Search Lists</a>
+	<a class="menu-link" href="/leaders"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-trophy"></use></svg></i> Leaders</a>
+	<a class="menu-link" href="/help"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-help"></use></svg></i> Help / Contact</a>
+	<a class="menu-link" href="/suggest"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-instagram-comment"></use></svg></i> Suggest Feature</a>
+	
+	
+	<a class="menu-link" href="/subscribe"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-new"></use></svg></i> Newsletter</a>
+	
+</div>
+
+	<form method="post" action="./books" id="form" novalidate="" onsubmit="return false;">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="tSbPssjSI9FWgjQ1Hm6/7ihSJ2n9Xs3HYcYTEDha97oidgFL0pfnTUGWeRU+++33bgBzbEqEr8Mnqns1xogTVeoec+j5fyquINoI4jXD3HJPP6kFFrheW6eUOjjfTFZlwMGxvZ0LvCQkg2CGO9GsfV32spX1JjUq84FOf31LNa2UWjAexcEhxO8/x+mv+9eqzFPeGTJyDWIr96cyGEoDxwSfT5rhxjkfs6o86I3e6fasWSK8EfNCHZNSj7ewkGGhFf67c/OoO9HaxtYmrpmXkg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form'];
+if (!theForm) {
+    theForm = document.form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90B738F3" />
+</div>
+
+		
+
+        <div id="panelContainer_Master" class="container">
+	
+
+			
+
+			
+	
+	<div id="MainContent_divListsPage" class="listsPage">
+
+		
+
+		<div id="MainContent_panelSplash" class="listsPage-splash" style="background:radial-gradient(600px 600px at top left, rgba(50,64,150, 0.9), rgba(123,211,232, 0.1)), url('/i/splash/2019-05/books.jpg') center center no-repeat;background-size:cover;">
+		
+			<div class="listsPage-splashContent">
+				<div class="title">
+					Earn Points for Books You&#39;ve Read
+				</div>
+				<div class="subtitle">
+					Find Book Lists That Interest You & Mark Off What You've Done!
+				</div>
+				<div class="button">
+					<div class="buttonButton" onclick="app.redirect('/create-list');">
+						OR MAKE YOUR OWN Book List &gt;
+					</div>
+				</div>
+			</div>
+		
+	</div>
+
+		
+
+		
+
+		<div>
+			<div id="MainContent_navsCategories" class="tabs listsPage-categoryTabs tabs-fullWidth">
+				<a href="/lists/all"  >All <span>(108,126)</span></a>
+				<a href="/lists/travel"  >Travel <span>(9,062)</span></a>
+				<a href="/lists/movies"  >Movies <span>(53,850)</span></a>
+				<a href="/lists/books" class=" active" >Books <span>(19,223)</span></a>
+				<a href="/lists/food"  >Food <span>(3,443)</span></a>
+				<a href="/lists/other"  >Other <span>(22,638)</span></a>
+			</div>
 		</div>
 
-		<div class="subtitle">
-			Our website is currently undergoing scheduled maintenance. <br>
-			We should be back shortly. Thank you for your patience.
+		<div class="content cb listsPage-content">
+
+			<div class="h"></div>
+
+			
+		
+			<div class="flexResponsive flexResponsive-spaced15 mmm">
+				
+				<div id="MainContent_navsSort" class="buttonGroup">
+					<a href="/lists/books/trending" class="btn  btn-primary" ><span class="glyphicon glyphicon-arrow-up "></span> Trending</a>
+					<a href="/lists/books/new" class="btn  btn-default" ><span class="glyphicon glyphicon-time "></span> New</a>
+					<a href="/lists/books/popular" class="btn  btn-default" ><span class="glyphicon glyphicon-user "></span> Popular</a>
+					
+					
+				</div>
+
+				
+
+				
+
+			</div>
+
+			<div id="MainContent_pager" class="pager mmm"><a href="/lists/books/trending/1" class="active">1</a><a href="/lists/books/trending/2" >2</a><a href="/lists/books/trending/3" >3</a><a href="/lists/books/trending/4" >4</a><a href="/lists/books/trending/5" >5</a><a href="/lists/books/trending/6" >6</a><a href="/lists/books/trending/7" >7</a><a href="/lists/books/trending/8" >8</a><a href="/lists/books/trending/9" >9</a><a href="/lists/books/trending/10" >10</a><a href="/lists/books/trending/11" >11</a><a href="/lists/books/trending/12" >12</a><a href="/lists/books/trending/13" >13</a><a href="/lists/books/trending/14" >14</a><a href="/lists/books/trending/15" >15</a><a href="/lists/books/trending/16" >16</a><a href="/lists/books/trending/17" >17</a><a href="/lists/books/trending/18" >18</a><a href="/lists/books/trending/19" >19</a><a href="/lists/books/trending/20" >20</a></div>
+			
+					
+
+			<div class="listsPage-resultsCount mm">
+				1-120 of 2,347 trending lists
+			
+				
+			</div>
+
+			<div id="MainContent_listRepeater_repeater" class="list-repeater clearfix" >
+		<div class="list-repeater-list " data-list-id="237379">
+			<a class="listCard" href="/1000-books-you-may-have-actually-read" >
+				<div class="list-image-wrapper"><img alt="1000 Books You May Have Actually Read" onerror="ImageLoadError(this)" src="/f/lists-330/8f7aa227-f373-4380-bb7a-67bc7cbcec7b.jpg" /></div>
+				<div class="list-name">1000 Books You May Have Actually Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 1,336 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 1000
+					</div>
+				</div>
+				
+			</a>
 		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="267114">
+			<a class="listCard" href="/book-hangovers" >
+				<div class="list-image-wrapper"><img alt="Book Hangovers" onerror="ImageLoadError(this)" src="/f/lists-330/8702e7a4-9184-4d30-96c5-852eb2cbbeac.jpg" /></div>
+				<div class="list-name">Book Hangovers</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 1,042 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 175
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270082">
+			<a class="listCard" href="/100-books-to-read-to-become-well-read" >
+				<div class="list-image-wrapper"><img alt="100 Books to Read to Become Well Read" onerror="ImageLoadError(this)" src="/f/lists-330/621bec77-3763-4881-93f9-95db680edc2a.jpg" /></div>
+				<div class="list-name">100 Books to Read to Become Well Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 447 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="268378">
+			<a class="listCard" href="/if-youve-read-10-of-these-books-youre-very" >
+				<div class="list-image-wrapper"><img alt="If You&amp;#39;ve Read 10% of These Books You&amp;#39;re Very Well Read" onerror="ImageLoadError(this)" src="/f/lists-330/228d0a32-1e13-40f1-8388-da9df5566906.jpg" /></div>
+				<div class="list-name">If You&#39;ve Read 10% of These Books You&#39;re Very Well Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 359 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 500
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="268546">
+			<a class="listCard" href="/the-999-most-popular-books-in-the-world" >
+				<div class="list-image-wrapper"><img alt="The 999 Most Popular Books in the World" onerror="ImageLoadError(this)" src="/f/lists-330/2f4928f5-d483-453d-baba-04f3d67d95e7.jpg" /></div>
+				<div class="list-name">The 999 Most Popular Books in the World</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 334 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 999
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="264726">
+			<a class="listCard" href="/actually-good-books-to-read" >
+				<div class="list-image-wrapper"><img alt="Actually Good Books to Read" onerror="ImageLoadError(this)" src="/f/lists-330/74f6378d-e3d5-4469-b4e3-d0a25c1ce154.jpg" /></div>
+				<div class="list-name">Actually Good Books to Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 236 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 775
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="27911">
+			<a class="listCard" href="/bbcs-top-100-books-you-need-to-read-before-you-die" >
+				<div class="list-image-wrapper"><img alt="BBC&amp;#39;s Top 100 Books You Need to Read Before You Die" onerror="ImageLoadError(this)" src="/f/lists-330/cb557eed-d0c3-4d68-90bf-c4e29ec89b85.jpg" /></div>
+				<div class="list-name">BBC&#39;s Top 100 Books You Need to Read Before You Die</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 181 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="267097">
+			<a class="listCard" href="/a-big-ol-list-of-books" >
+				<div class="list-image-wrapper"><img alt="A Big Ol&amp;#39; List of Books" onerror="ImageLoadError(this)" src="/f/lists-330/9ed6cf8b-19e6-4a75-92a3-4999b95e3412.jpg" /></div>
+				<div class="list-name">A Big Ol&#39; List of Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 167 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 478
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="39288">
+			<a class="listCard" href="/the-telegraphs-100-novels-everyone-should-read" >
+				<div class="list-image-wrapper"><img alt="The Telegraph&amp;#39;s 100 Novels Everyone Should Read" onerror="ImageLoadError(this)" src="/f/lists-330/592e388b-6d02-4dba-a7b4-01ae28ab0e08.jpg" /></div>
+				<div class="list-name">The Telegraph&#39;s 100 Novels Everyone Should Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 145 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270250">
+			<a class="listCard" href="/books-written-by-black-women-that-should-be" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books Written by Black Women That Should Be Required Reading" onerror="ImageLoadError(this)" data-src="/f/lists-330/bed2180c-21ff-4a81-9695-2d42febb7752.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books Written by Black Women That Should Be Required Reading</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 109 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 170
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="8008">
+			<a class="listCard" href="/kaunismina-bbc-6-books-challenge" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="BBC Believes You&amp;#39;ve Only Read 6 of These Books..." onerror="ImageLoadError(this)" data-src="/f/lists-330/93d5f8b7-5158-43db-bdcc-484322c24e5b.jpg" src="/i/b.png" /></div>
+				<div class="list-name">BBC Believes You&#39;ve Only Read 6 of These Books...</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 103 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270253">
+			<a class="listCard" href="/21-excellent-books-with-happy-endings" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="21 Excellent Books With Happy Endings" onerror="ImageLoadError(this)" data-src="/f/lists-330/553813db-dfda-43d6-b16e-f72c469f6f2f.jpg" src="/i/b.png" /></div>
+				<div class="list-name">21 Excellent Books With Happy Endings</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 102 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 21
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		<span class="ad-wrapper"><ins class="adsbygoogle "
+	style="display:block"
+	data-ad-client="ca-pub-9310224305865624"
+	data-ad-slot="2111935286"
+	data-ad-format="horizontal"
+	data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></span>
+	
+		<div class="list-repeater-list " data-list-id="270165">
+			<a class="listCard" href="/how-to-be-a-better-ally-to-black-people" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="How to Be a Better Ally to Black People" onerror="ImageLoadError(this)" data-src="/f/lists-330/960b0032-5a3f-4c69-adcc-3c9bbf6ba278.jpg" src="/i/b.png" /></div>
+				<div class="list-name">How to Be a Better Ally to Black People</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 99 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 49
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269899">
+			<a class="listCard" href="/1000-books-read-and-more-on-tbr-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="1000 + Books Read and More on TBR List" onerror="ImageLoadError(this)" data-src="/f/lists-330/e8724a87-5604-48d7-a731-cafc8327c4d5.jpg" src="/i/b.png" /></div>
+				<div class="list-name">1000 + Books Read and More on TBR List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 95 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 1206
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270116">
+			<a class="listCard" href="/the-273-books-hannah-has-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The 273 Books Hannah Has Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/faf58aa2-38b3-424c-bf22-d6a2b96244c4.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The 273 Books Hannah Has Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 91 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 273
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="176">
+			<a class="listCard" href="/rory-gilmore-reading-challenge" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Rory Gilmore Reading Challenge" onerror="ImageLoadError(this)" data-src="/f/lists-330/2daafe40-6b23-431d-bd7a-9183a8b5e4d7.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Rory Gilmore Reading Challenge</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 88 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 339
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270211">
+			<a class="listCard" href="/violets-complete-tbr-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Violet&amp;#39;s Complete TBR List" onerror="ImageLoadError(this)" data-src="/f/lists-330/66ffb8cd-8730-4b39-8438-890e10628472.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Violet&#39;s Complete TBR List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 77 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269717">
+			<a class="listCard" href="/books-about-fae-folk-fairy-fairies-faeries-etc" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books About Fae Folk (Fairy, Fairies, Faeries etc...)" onerror="ImageLoadError(this)" data-src="/f/lists-330/57f97150-d570-4e49-ab76-9fed829c3318.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books About Fae Folk (Fairy, Fairies, Faeries etc...)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 75 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 66
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="138073">
+			<a class="listCard" href="/top-100-bl-manga" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Top 100 BL Manga" onerror="ImageLoadError(this)" data-src="/f/lists-330/c829ffbe-3d44-4ccf-a11e-31b665b60b30.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Top 100 BL Manga</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 68 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270294">
+			<a class="listCard" href="/youth-how-many-banned-books-have-you-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="YOUTH: How Many Banned Books Have You Read?" onerror="ImageLoadError(this)" data-src="/f/lists-330/dcbc0410-cf99-425d-8e0e-7985c6a60f63.jpg" src="/i/b.png" /></div>
+				<div class="list-name">YOUTH: How Many Banned Books Have You Read?</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 68 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 131
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270227">
+			<a class="listCard" href="/anti-racist-resource-guide" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Anti-Racist Resource Guide" onerror="ImageLoadError(this)" data-src="/f/lists-330/66411add-44f2-48bd-a3a2-3aba20555bb2.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Anti-Racist Resource Guide</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 68 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 59
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="266180">
+			<a class="listCard" href="/something-rich-and-strange-a-collection-of" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Something Rich and Strange -- A Collection of Fantasy, Surrealism, Fairy Tales, Horror and Science Fiction" onerror="ImageLoadError(this)" data-src="/f/lists-330/6215e9ef-34da-4286-b62d-142e1f008ae9.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Something Rich and Strange -- A Collection of Fantasy, Surrealism, Fairy Tales, Horror and Science Fiction</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 65 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 70
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269232">
+			<a class="listCard" href="/top-100-english-language-novels-of-the-20th" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Top 100 English Language Novels of the 20th Century (Madison Public Library)" onerror="ImageLoadError(this)" data-src="/f/lists-330/f0fbce07-56f5-4b1a-9102-d166dfc27743.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Top 100 English Language Novels of the 20th Century (Madison Public Library)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 64 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270163">
+			<a class="listCard" href="/chs-favorite-childrens-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="CH&amp;#39;s Favorite Children&amp;#39;s Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/58e2e98a-88fb-4a09-960e-9b59f791fa5f.jpg" src="/i/b.png" /></div>
+				<div class="list-name">CH&#39;s Favorite Children&#39;s Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 64 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 48
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		<span class="ad-wrapper"><ins class="adsbygoogle "
+	style="display:block"
+	data-ad-client="ca-pub-9310224305865624"
+	data-ad-slot="5949864676"
+	data-ad-format="horizontal"
+	data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></span>
+	
+		<div class="list-repeater-list " data-list-id="269563">
+			<a class="listCard" href="/rfantasy-2019-top-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="R/Fantasy 2019 Top Novels" onerror="ImageLoadError(this)" data-src="/f/lists-330/b72e1afd-7aed-4688-a9fd-71bf365d4757.jpg" src="/i/b.png" /></div>
+				<div class="list-name">R/Fantasy 2019 Top Novels</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 60 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 147
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270049">
+			<a class="listCard" href="/shortest-books-cj-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Shortest Books CJ Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/457df782-99bf-4f45-b540-1d080f1a5a1d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Shortest Books CJ Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 60 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 377
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270241">
+			<a class="listCard" href="/150-books-by-latino-and-latin-american-authors" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="150 Books by Latino and Latin American Authors" onerror="ImageLoadError(this)" data-src="/f/lists-330/cfaac597-a6c2-4fdb-a23e-e56b77708a4d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">150 Books by Latino and Latin American Authors</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 55 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 150
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="267624">
+			<a class="listCard" href="/80-books-izzy-read-in-2020" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="80 Books Izzy Read in 2020" onerror="ImageLoadError(this)" data-src="/f/lists-330/4ed3365e-58a2-4952-b712-9fed9c155a8b.jpg" src="/i/b.png" /></div>
+				<div class="list-name">80 Books Izzy Read in 2020</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 55 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 80
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="268943">
+			<a class="listCard" href="/how-many-of-these-200-books-have-you-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="How Many of These 200 Books Have You Read?" onerror="ImageLoadError(this)" data-src="/f/lists-330/2d1e0117-99dc-420a-bba5-b7f6f78b116d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">How Many of These 200 Books Have You Read?</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 54 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270313">
+			<a class="listCard" href="/all-of-the-physical-books-on-bexcapades-bookshelf" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="All of the Physical Books on Bexcapades Bookshelf" onerror="ImageLoadError(this)" data-src="/f/lists-330/380988dd-46de-4ee9-b2d1-0b8db9fd3d0a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">All of the Physical Books on Bexcapades Bookshelf</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 52 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 222
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269959">
+			<a class="listCard" href="/books-to-read-in-2020-and-beyond" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books to Read in 2020 and Beyond" onerror="ImageLoadError(this)" data-src="/f/lists-330/145ee217-15b8-40c6-92aa-8b11967d192a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books to Read in 2020 and Beyond</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 51 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270086">
+			<a class="listCard" href="/ioanas-last-100-read-books-as-of-06-01-2020" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Ioana&amp;#39;s Last 100 Read Books as of 06-01-2020" onerror="ImageLoadError(this)" data-src="/f/lists-330/de7c07e8-20aa-49fa-bcc8-6af818b7ba43.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Ioana&#39;s Last 100 Read Books as of 06-01-2020</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 48 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="164402">
+			<a class="listCard" href="/the-official-top-100-manga-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The OFFICIAL Top 100 Manga of All Time (According to the Internet)" onerror="ImageLoadError(this)" data-src="/f/lists-330/434b6895-bb72-4490-9f22-a37c2d6265b1.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The OFFICIAL Top 100 Manga of All Time (According to the Internet)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 46 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 99
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270041">
+			<a class="listCard" href="/the-longest-books-cj-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Longest Books CJ Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/df179231-7da8-4d6e-8cea-f3d71635803b.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Longest Books CJ Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 44 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 40
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270226">
+			<a class="listCard" href="/random-kids-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Random Kids Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/947f2930-19e2-4338-a89a-d762362db133.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Random Kids Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 41 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 11
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270011">
+			<a class="listCard" href="/duchs-tbr-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Duch&amp;#39;s Tbr List" onerror="ImageLoadError(this)" data-src="/f/lists-330/dfbf0fdb-44e3-406e-9547-ef9f19d20be5.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Duch&#39;s Tbr List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 41 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 46
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		<span class="ad-wrapper"><ins class="adsbygoogle "
+	style="display:block"
+	data-ad-client="ca-pub-9310224305865624"
+	data-ad-slot="8211752852"
+	data-ad-format="horizontal"
+	data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></span>
+	
+		<div class="list-repeater-list " data-list-id="270312">
+			<a class="listCard" href="/brandis-infinite-reading-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Brandi&amp;#39;s Infinite Reading List" onerror="ImageLoadError(this)" data-src="/f/lists-330/c1984707-93be-4eec-8741-5c6deecb929a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Brandi&#39;s Infinite Reading List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 39 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269989">
+			<a class="listCard" href="/violets-favourite-books-by-authors-from-the-us" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Violet&amp;#39;s Favourite Books by Authors From the US" onerror="ImageLoadError(this)" data-src="/f/lists-330/8ce1a9dd-6ac5-4e05-82ba-292308b5c304.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Violet&#39;s Favourite Books by Authors From the US</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 39 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 50
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="181304">
+			<a class="listCard" href="/yaoi-and-bl-manga-and-webtoons" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Yaoi and BL Manga and Webtoons!" onerror="ImageLoadError(this)" data-src="/f/lists-330/aa97852e-65fe-46c4-9b8b-3396bec2ce41.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Yaoi and BL Manga and Webtoons!</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 37 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="267695">
+			<a class="listCard" href="/be-well-read-with-this-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Be Well Read With This List" onerror="ImageLoadError(this)" data-src="/f/lists-330/1989e273-fc39-4273-8861-ddf24c254cff.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Be Well Read With This List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 37 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 350
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="261345">
+			<a class="listCard" href="/june-2020-tbr-of-dk" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="June 2020 TBR of D.K." onerror="ImageLoadError(this)" data-src="/f/lists-330/c5a41f2c-d55b-41c9-9bbf-41bf1e93b8aa.jpg" src="/i/b.png" /></div>
+				<div class="list-name">June 2020 TBR of D.K.</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 37 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 30
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269970">
+			<a class="listCard" href="/last-100-books-steph-has-read-2020-version" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Last 100 Books Steph Has Read (2020 Version)" onerror="ImageLoadError(this)" data-src="/f/lists-330/0fe2abd4-883c-4c11-b06b-396a4d6647db.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Last 100 Books Steph Has Read (2020 Version)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 37 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="987">
+			<a class="listCard" href="/100-must-read-african-american-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 Must-Read African-American Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/9f4ddab0-245a-4669-a201-cc865c820d22.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 Must-Read African-American Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 34 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269910">
+			<a class="listCard" href="/quill-and-quires-best-books-of-2015-2019" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Quill and Quire&amp;#39;s Best Books of 2015-2019" onerror="ImageLoadError(this)" data-src="/f/lists-330/b64ef785-6cab-48db-a9b1-d90a68cfd887.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Quill and Quire&#39;s Best Books of 2015-2019</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 34 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 120
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="10056">
+			<a class="listCard" href="/100-classic-books-challenge" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="99 Classic Books Challenge" onerror="ImageLoadError(this)" data-src="/f/lists-330/592a1492-4b9c-4f65-9836-e400b030f541.jpg" src="/i/b.png" /></div>
+				<div class="list-name">99 Classic Books Challenge</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 31 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 99
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269574">
+			<a class="listCard" href="/mi-library" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="A.R.A. Library" onerror="ImageLoadError(this)" data-src="/f/lists-330/4befe9d7-e290-43a5-8adb-b428a3dc3940.jpg" src="/i/b.png" /></div>
+				<div class="list-name">A.R.A. Library</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 30 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 167
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="16919">
+			<a class="listCard" href="/best-books-made-into-movies" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Best Books Made Into Movies" onerror="ImageLoadError(this)" data-src="/f/lists-330/a4ec60a8-ebc1-4958-ad7e-df30e18fd68c.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Best Books Made Into Movies</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 29 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 149
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="29036">
+			<a class="listCard" href="/300-books-everyone-should-read-at-least-once" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="300 Books Everyone Should Read at Least Once" onerror="ImageLoadError(this)" data-src="/f/lists-330/61305fa6-057b-4af3-be6d-36dfd279a86a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">300 Books Everyone Should Read at Least Once</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 29 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 300
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		<span class="ad-wrapper"><ins class="adsbygoogle "
+	style="display:block"
+	data-ad-client="ca-pub-9310224305865624"
+	data-ad-slot="7459275515"
+	data-ad-format="horizontal"
+	data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></span>
+	
+		<div class="list-repeater-list " data-list-id="269991">
+			<a class="listCard" href="/150-anti-racism-non-fiction-book-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="150 Anti-Racism Non Fiction Book List" onerror="ImageLoadError(this)" data-src="/f/lists-330/6c7443e5-f856-439c-810e-eb2d86bac97b.jpg" src="/i/b.png" /></div>
+				<div class="list-name">150 Anti-Racism Non Fiction Book List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 29 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 150
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="36909">
+			<a class="listCard" href="/100doorstoppers" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 &amp;#39;Big Fat Books Worth the Effort&amp;#39;" onerror="ImageLoadError(this)" data-src="/f/lists-330/d6038ff7-f3a9-49a6-a8cf-0b1fcac11f85.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 &#39;Big Fat Books Worth the Effort&#39;</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 27 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="9502">
+			<a class="listCard" href="/books-to-read-to-be-considered-well-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books to Read to Be Considered Well Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/e11c4894-598b-44a5-8f73-2ed85480d7ff.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books to Read to Be Considered Well Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 26 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 143
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270151">
+			<a class="listCard" href="/village-voices-best-books-of-2001-2005" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Village Voice&amp;#39;s Best Books of 2001-2005" onerror="ImageLoadError(this)" data-src="/f/lists-330/13331650-54ec-4616-ab81-197a82b695ef.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Village Voice&#39;s Best Books of 2001-2005</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 26 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 125
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="136551">
+			<a class="listCard" href="/200-books-you-might-actually-enjoy" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="200 Books You Might Actually Enjoy" onerror="ImageLoadError(this)" data-src="/f/lists-330/e475a23b-8b72-4418-ab89-87292c2a61ed.jpg" src="/i/b.png" /></div>
+				<div class="list-name">200 Books You Might Actually Enjoy</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 24 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270076">
+			<a class="listCard" href="/sea-of-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="&amp;quot;Sea&amp;quot; of Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/ebd04fce-3d29-411e-9516-80646194e1bf.jpg" src="/i/b.png" /></div>
+				<div class="list-name">&quot;Sea&quot; of Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 23 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270063">
+			<a class="listCard" href="/a-library-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="A &amp;quot;Library&amp;quot; List" onerror="ImageLoadError(this)" data-src="/f/lists-330/efe191bc-99ff-4f92-b71b-7b3e5d225fd6.jpg" src="/i/b.png" /></div>
+				<div class="list-name">A &quot;Library&quot; List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 22 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 70
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="170985">
+			<a class="listCard" href="/1001-books-you-must-read-2018" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="1001 Books You Must Read Before You Die (All Editions Combined  2018 Update)" onerror="ImageLoadError(this)" data-src="/f/lists-330/0aebe421-66c8-4194-aab9-722fc99fab12.jpg" src="/i/b.png" /></div>
+				<div class="list-name">1001 Books You Must Read Before You Die (All Editions Combined  2018 Update)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 21 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 1316
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270070">
+			<a class="listCard" href="/what-eliza-read-in-2019" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="What Eliza Read in 2019" onerror="ImageLoadError(this)" data-src="/f/lists-330/80930a2b-0454-4438-b4d9-062eb30f9694.jpg" src="/i/b.png" /></div>
+				<div class="list-name">What Eliza Read in 2019</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 21 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 25
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269866">
+			<a class="listCard" href="/honest-dog-books-anti-racist-reading-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Honest Dog Books Anti-Racist Reading List" onerror="ImageLoadError(this)" data-src="/f/lists-330/bb026b9b-a1ba-474f-85e9-ee73285467ed.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Honest Dog Books Anti-Racist Reading List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 21 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 30
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="57">
+			<a class="listCard" href="/101-best-selling-books-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="101 Best Selling Books of All Time" onerror="ImageLoadError(this)" data-src="/f/lists-330/dce8fd84-7b3a-4d13-a710-b7632a41e9d4.jpg" src="/i/b.png" /></div>
+				<div class="list-name">101 Best Selling Books of All Time</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 20 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 101
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="240">
+			<a class="listCard" href="/wizard-magazine-100-greatest-graphic-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Wizard Magazine 100 Greatest Graphic Novels" onerror="ImageLoadError(this)" data-src="/f/lists-330/5530b1d8-5e19-40a3-8003-d7494c12c0dc.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Wizard Magazine 100 Greatest Graphic Novels</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 19 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="86">
+			<a class="listCard" href="/50-books-to-read-before-you-die" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="50 Books to Read Before You Die" onerror="ImageLoadError(this)" data-src="/f/lists-330/7899cc01-8e01-4871-a786-96a4202c4357.jpg" src="/i/b.png" /></div>
+				<div class="list-name">50 Books to Read Before You Die</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 17 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 50
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="1140">
+			<a class="listCard" href="/top-100-childrens-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Top 100 Children&amp;#39;s Novels - School Library Journal" onerror="ImageLoadError(this)" data-src="/f/lists-330/a5c6c64f-f7dc-4db9-a392-6af3d6f7df90.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Top 100 Children&#39;s Novels - School Library Journal</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 15 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="11154">
+			<a class="listCard" href="/from-zero-to-well-read-in-100-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="From Zero to Well-Read in 100 Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/41f8d068-4679-42a4-9ae8-f7e6f37bf391.jpg" src="/i/b.png" /></div>
+				<div class="list-name">From Zero to Well-Read in 100 Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 15 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="39401">
+			<a class="listCard" href="/top-40-shonen-manga-must-reads-how-many-have" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Top 40 Shonen Manga Must Reads" onerror="ImageLoadError(this)" data-src="/f/lists-330/8bdc1479-ee9d-40e3-bb90-7fd36613d5d3.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Top 40 Shonen Manga Must Reads</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 14 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 40
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="38059">
+			<a class="listCard" href="/business-insider-100-books-everyone-should" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 Books Everyone Should Read (Ranked by the Users of Goodreads!)" onerror="ImageLoadError(this)" data-src="/f/lists-330/7c6a48ca-d523-409e-ad51-5e652ee208ed.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 Books Everyone Should Read (Ranked by the Users of Goodreads!)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 14 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="48417">
+			<a class="listCard" href="/banned-classics" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Banned Classics" onerror="ImageLoadError(this)" data-src="/f/lists-330/886aee0e-f871-494c-b413-76c62d571dd7.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Banned Classics</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 14 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="8781">
+			<a class="listCard" href="/reddits-top-105-fantasy-novelsseries-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Reddit&amp;#39;s Top Fantasy Reads of All Time" onerror="ImageLoadError(this)" data-src="/f/lists-330/4f672ced-417a-46eb-86ff-edcd98201ccd.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Reddit&#39;s Top Fantasy Reads of All Time</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 13 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 105
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="60764">
+			<a class="listCard" href="/600-books-to-be-considered-very-well-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="600 Books to Be Considered Very Well-Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/c9795e24-65fb-4d7c-b800-1dfb732b2cfe.jpg" src="/i/b.png" /></div>
+				<div class="list-name">600 Books to Be Considered Very Well-Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 12 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 600
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="11040">
+			<a class="listCard" href="/amazons-100-books-to-read-in-your-lifetime" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Amazon&amp;#39;s 100 Books to Read in Your Lifetime" onerror="ImageLoadError(this)" data-src="/f/lists-330/1ab6709e-3ffe-46fa-8d39-a5d6ef2f37a5.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Amazon&#39;s 100 Books to Read in Your Lifetime</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 12 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="5662">
+			<a class="listCard" href="/reddits-top-200-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Reddit&amp;#39;s Top 200 Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/8c4cffc6-c190-451c-9fd5-565d5f80d26d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Reddit&#39;s Top 200 Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 12 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="37619">
+			<a class="listCard" href="/ap-authors-to-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="AP Authors to Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/9d8db09c-17d7-4a2b-b087-486aed7e2889.jpg" src="/i/b.png" /></div>
+				<div class="list-name">AP Authors to Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 12 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 128
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="265682">
+			<a class="listCard" href="/a-fantasy-writers-evolution" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="A Fantasy Writer&amp;#39;s Evolution" onerror="ImageLoadError(this)" data-src="/f/lists-330/61e932a0-d9da-4fb0-b782-58972f75449d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">A Fantasy Writer&#39;s Evolution</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 12 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 129
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="7423">
+			<a class="listCard" href="/amazons-100-books-to-read-in-a-lifetime" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Amazon&amp;#39;s 100 Books to Read in a Lifetime" onerror="ImageLoadError(this)" data-src="/f/lists-330/e5beb02b-2719-4b88-a045-6607b1bf39c5.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Amazon&#39;s 100 Books to Read in a Lifetime</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="54">
+			<a class="listCard" href="/npr-top-100-science-fiction-and-fantasy-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="NPR&amp;#39;s Top 100 Science Fiction &amp;amp; Fantasy Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/f73cecd7-1972-4da5-8162-e2b58c267457.jpg" src="/i/b.png" /></div>
+				<div class="list-name">NPR&#39;s Top 100 Science Fiction &amp; Fantasy Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="10597">
+			<a class="listCard" href="/200-books-everyone-should-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="200 Books Everyone Should Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/a668a147-e994-40a2-9397-cf0a52fa8f4e.jpg" src="/i/b.png" /></div>
+				<div class="list-name">200 Books Everyone Should Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="17958">
+			<a class="listCard" href="/college-boards-101-books-for-the-college-bound" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="College Board&amp;#39;s 101 Books for the College-Bound Reader" onerror="ImageLoadError(this)" data-src="/f/lists-330/3b205910-6106-42fa-8bd2-9e7aa0896ada.jpg" src="/i/b.png" /></div>
+				<div class="list-name">College Board&#39;s 101 Books for the College-Bound Reader</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 101
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="161490">
+			<a class="listCard" href="/100-books-bucket-list-scratch-off-poster" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 Books Bucket List Scratch off Poster" onerror="ImageLoadError(this)" data-src="/f/lists-330/b6eded9e-abd7-4e48-a13f-23d9ed8aa610.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 Books Bucket List Scratch off Poster</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="262329">
+			<a class="listCard" href="/lgbt-books-to-read-during-june" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="LGBT+ Books to Read During June" onerror="ImageLoadError(this)" data-src="/f/lists-330/85fddff6-dc39-48ec-a849-44628da8d905.jpg" src="/i/b.png" /></div>
+				<div class="list-name">LGBT+ Books to Read During June</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 120
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="268601">
+			<a class="listCard" href="/best-books-ever-written" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Best Books Ever Written" onerror="ImageLoadError(this)" data-src="/f/lists-330/28f3d711-431e-4901-a5f2-feec5567923e.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Best Books Ever Written</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 623
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269792">
+			<a class="listCard" href="/erinm31s-bookshelf-2020" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Erinm31&amp;#39;s Bookshelf 2020" onerror="ImageLoadError(this)" data-src="/f/lists-330/90835272-b03f-4de4-840d-a2a75ea6a82b.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Erinm31&#39;s Bookshelf 2020</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 246
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269888">
+			<a class="listCard" href="/54-books-read-during-quarantine-2020" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="54 Books Read During Quarantine 2020" onerror="ImageLoadError(this)" data-src="/f/lists-330/7fe42608-3b7f-4e96-987d-cb24f145ca9f.jpg" src="/i/b.png" /></div>
+				<div class="list-name">54 Books Read During Quarantine 2020</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 11 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 54
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="209881">
+			<a class="listCard" href="/become-very-well-read-without-reading-anything" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Become Very Well-Read Without Reading Anything by a Man" onerror="ImageLoadError(this)" data-src="/f/lists-330/3befe762-d18c-4dcb-98e0-8b2fa00cabd4.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Become Very Well-Read Without Reading Anything by a Man</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 10 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 250
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="217669">
+			<a class="listCard" href="/the-guardians-100-best-books-of-the-21st-century" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Guardian&amp;#39;s 100 Best Books of the 21st Century (So Far)" onerror="ImageLoadError(this)" data-src="/f/lists-330/3d2c4273-5b12-468d-a873-ba5db97014e3.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Guardian&#39;s 100 Best Books of the 21st Century (So Far)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 10 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="111846">
+			<a class="listCard" href="/goodreads-200-most-difficult-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Goodreads&amp;#39; 200 Most Difficult Novels" onerror="ImageLoadError(this)" data-src="/f/lists-330/80b4e0fa-37c9-42e8-9b45-50d639860c8d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Goodreads&#39; 200 Most Difficult Novels</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 10 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269506">
+			<a class="listCard" href="/the-ultimate-fantasy-series-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Ultimate Fantasy Series List" onerror="ImageLoadError(this)" data-src="/f/lists-330/83bd6ba9-a938-4d6b-bb8f-7fe8895bcb30.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Ultimate Fantasy Series List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 10 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 303
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="263729">
+			<a class="listCard" href="/books-read-in-2020-part-2-may-to-august" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books Read in 2020, Part 2: May to August" onerror="ImageLoadError(this)" data-src="/f/lists-330/3ad8a6d9-9472-41c0-a4f7-c33949f400ab.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books Read in 2020, Part 2: May to August</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 10 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 13
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="728">
+			<a class="listCard" href="/guardians-1000-novels-everyone-must-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Guardian&amp;#39;s 1000 Novels Everyone Must Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/cd237d85-ed3c-4593-a9d1-9cfacd122f88.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Guardian&#39;s 1000 Novels Everyone Must Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 9 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 1000
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="69465">
+			<a class="listCard" href="/24-books-you-should-read-now-based-on-your" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="24 Books You Should Read Now, Based on Your High School Favorites" onerror="ImageLoadError(this)" data-src="/f/lists-330/b8fe3809-3bb4-41b8-a78f-4a242ab49a04.jpg" src="/i/b.png" /></div>
+				<div class="list-name">24 Books You Should Read Now, Based on Your High School Favorites</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 9 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 48
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269882">
+			<a class="listCard" href="/the-anti-racism-reading-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Anti-Racism Reading List" onerror="ImageLoadError(this)" data-src="/f/lists-330/58611caa-28ce-4790-a271-d08ddb939a04.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Anti-Racism Reading List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 9 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 140
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269873">
+			<a class="listCard" href="/every-book-in-room-as-of-6120" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Every Book in Room (As of 6/1/20)" onerror="ImageLoadError(this)" data-src="/f/lists-330/47f1ec44-3376-4aba-b5af-fab41ee58651.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Every Book in Room (As of 6/1/20)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 9 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 321
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="10035">
+			<a class="listCard" href="/1001-books-you-should-read-before-you-die-complete" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="1001 Books You Must Read Before You Die (All Editions Combined - 2012 Edition)" onerror="ImageLoadError(this)" data-src="/f/lists-330/9e35cdce-0b5f-457c-9905-b570eb8715a1.jpg" src="/i/b.png" /></div>
+				<div class="list-name">1001 Books You Must Read Before You Die (All Editions Combined - 2012 Edition)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 1306
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="17887">
+			<a class="listCard" href="/the-greatest-novels-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="200 Greatest Novels of All Time" onerror="ImageLoadError(this)" data-src="/f/lists-330/285e01e2-fb0c-46db-ab21-bf6a1ab46efa.jpg" src="/i/b.png" /></div>
+				<div class="list-name">200 Greatest Novels of All Time</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="37023">
+			<a class="listCard" href="/50-lesser-known-classics-in-5-years" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="50+ Lesser Known Classics in 5 Years" onerror="ImageLoadError(this)" data-src="/f/lists-330/5813339a-2591-4fbe-a53e-3973aab62a60.jpg" src="/i/b.png" /></div>
+				<div class="list-name">50+ Lesser Known Classics in 5 Years</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 62
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="52068">
+			<a class="listCard" href="/girl-dressed-as-guy-manga" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Girl Dressed as Guy Manga" onerror="ImageLoadError(this)" data-src="/f/lists-330/00c8d835-2fa4-4d30-940f-0784baca8882.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Girl Dressed as Guy Manga</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 51
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="270031">
+			<a class="listCard" href="/books-ive-read-during-corona" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Beth&amp;#39;s Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/932c710b-a04d-4120-bd78-3cffa1daa3da.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Beth&#39;s Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 26
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="269709">
+			<a class="listCard" href="/sarahs-tbr-list-2020" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Sarah&amp;#39;s TBR List 2020" onerror="ImageLoadError(this)" data-src="/f/lists-330/41e5bb06-bb85-4665-838c-2da2947e859c.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Sarah&#39;s TBR List 2020</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 244
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="242087">
+			<a class="listCard" href="/a-librarians-tbr-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="A Librarian&amp;#39;s TBR List" onerror="ImageLoadError(this)" data-src="/f/lists-330/065f9f7c-55b6-41d4-9249-b2ac8d80d629.jpg" src="/i/b.png" /></div>
+				<div class="list-name">A Librarian&#39;s TBR List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 8 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 2996
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="55">
+			<a class="listCard" href="/npr-100-best-ever-teen-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="NPR&amp;#39;s 100 Best-Ever Teen Novels" onerror="ImageLoadError(this)" data-src="/f/lists-330/adc0b804-2d9b-48ce-960d-9e7924d0d33a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">NPR&#39;s 100 Best-Ever Teen Novels</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="29">
+			<a class="listCard" href="/bbc-the-big-read-best-loved-novels-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="BBC&amp;#39;s The Big Read - Best Loved Novels of All Time" onerror="ImageLoadError(this)" data-src="/f/lists-330/3ba5921d-1089-4034-b7e4-bf3e83dac769.jpg" src="/i/b.png" /></div>
+				<div class="list-name">BBC&#39;s The Big Read - Best Loved Novels of All Time</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="9248">
+			<a class="listCard" href="/the-ultimate-reading-list" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The ULTIMATE Reading List" onerror="ImageLoadError(this)" data-src="/f/lists-330/aec3a16a-2016-4479-9616-1ec02010ccae.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The ULTIMATE Reading List</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 754
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="85137">
+			<a class="listCard" href="/the-top-10-most-read-books-in-the-world" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Top 10 Most Read Books in the World" onerror="ImageLoadError(this)" data-src="/f/lists-330/5b9a73a0-5335-415d-a8a3-cb2980c8b179.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Top 10 Most Read Books in the World</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 10
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="62911">
+			<a class="listCard" href="/popular-book-series" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Popular Book Series" onerror="ImageLoadError(this)" data-src="/f/lists-330/cfdba60d-0789-4182-a1b6-b7add2b2be6f.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Popular Book Series</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 81
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="75996">
+			<a class="listCard" href="/books-to-read-to-be-a-critical-thinker" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books to Read to Be a Critical Thinker" onerror="ImageLoadError(this)" data-src="/f/lists-330/3363e2a0-8a04-4c66-a981-6f4a914869a0.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books to Read to Be a Critical Thinker</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 76
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="71338">
+			<a class="listCard" href="/100-books-to-read-in-your-lifetime" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 Books to Read in Your Lifetime" onerror="ImageLoadError(this)" data-src="/f/lists-330/a18fc7cb-bcb7-4c8b-bd62-c7e800ca251d.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 Books to Read in Your Lifetime</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="182120">
+			<a class="listCard" href="/books-white-people-need-to-read" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books White People Need to Read" onerror="ImageLoadError(this)" data-src="/f/lists-330/825953f5-5e29-462b-bab6-0bd035fc4c0e.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books White People Need to Read</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 213
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="168038">
+			<a class="listCard" href="/100-best-books-of-all-time" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="100 Best Books of All Time" onerror="ImageLoadError(this)" data-src="/f/lists-330/98da557b-9569-4de9-a23f-c4998349a870.jpg" src="/i/b.png" /></div>
+				<div class="list-name">100 Best Books of All Time</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 7 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="188831">
+			<a class="listCard" href="/the-most-addictive-books-of-the-last-25-years" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Most Addictive Books of the Last 25 Years" onerror="ImageLoadError(this)" data-src="/f/lists-330/4743ca5e-6819-4a5f-bb03-095fa2da537c.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Most Addictive Books of the Last 25 Years</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 33
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="153946">
+			<a class="listCard" href="/the-great-american-read-americas-favourite-100" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Great American Read: America&amp;#39;s 100 Favorite Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/11193d69-2361-4913-a639-8eb45b6ba1fe.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Great American Read: America&#39;s 100 Favorite Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="98196">
+			<a class="listCard" href="/the-funniest-novels-ever-written" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Funniest Novels Ever Written" onerror="ImageLoadError(this)" data-src="/f/lists-330/f159411f-f8b9-4e02-9fe9-0f4755cc7d7a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Funniest Novels Ever Written</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 95
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="99236">
+			<a class="listCard" href="/the-500-best-books-ever-written" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The 500 Best Books Ever Written" onerror="ImageLoadError(this)" data-src="/f/lists-330/6ffdaa4d-bb97-4652-bcc2-6b677275fe58.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The 500 Best Books Ever Written</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 507
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="64328">
+			<a class="listCard" href="/rory-gilmore-reading-challenge-extended-edition" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Rory Gilmore Reading Challenge (Extended Edition)" onerror="ImageLoadError(this)" data-src="/f/lists-330/310df811-d8ec-4ca4-a88d-73a0a2a3e713.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Rory Gilmore Reading Challenge (Extended Edition)</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 349
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="79502">
+			<a class="listCard" href="/a-list-of-jacqueline-wilson-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="A List of Jacqueline Wilson Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/097e15a7-a712-4dcf-b99b-c390dbef208f.jpg" src="/i/b.png" /></div>
+				<div class="list-name">A List of Jacqueline Wilson Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 66
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="89329">
+			<a class="listCard" href="/books-to-read-before-turning-80" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Books to Read Before Turning 80" onerror="ImageLoadError(this)" data-src="/f/lists-330/eea19b43-8128-42df-ade6-578c81302e00.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Books to Read Before Turning 80</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 995
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="8851">
+			<a class="listCard" href="/personal-top-100-novels-any-genre-any-period" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Personal Top 100 Novels - Any Genre, Any Period" onerror="ImageLoadError(this)" data-src="/f/lists-330/d0fd8c31-9eaa-4218-ab76-04f23d8e7030.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Personal Top 100 Novels - Any Genre, Any Period</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="15824">
+			<a class="listCard" href="/best-book-club-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="Best Book Club Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/343500fd-eb72-4c98-818d-14dd0d925d83.jpg" src="/i/b.png" /></div>
+				<div class="list-name">Best Book Club Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 80
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="39054">
+			<a class="listCard" href="/215-young-adult-books" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="215 Young-Adult Books" onerror="ImageLoadError(this)" data-src="/f/lists-330/eb78006e-747f-490f-a851-9b237225e282.jpg" src="/i/b.png" /></div>
+				<div class="list-name">215 Young-Adult Books</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 215
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="43808">
+			<a class="listCard" href="/125-best-novels-novellas-by-women" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="125 Best Novels by Women" onerror="ImageLoadError(this)" data-src="/f/lists-330/516e979f-197a-42e6-980a-9d3f0f5dc94a.jpg" src="/i/b.png" /></div>
+				<div class="list-name">125 Best Novels by Women</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 125
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="42609">
+			<a class="listCard" href="/the-great-books-guides-100-greatest-novels" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="The Great Books Guide&amp;#39;s 100 Greatest Novels" onerror="ImageLoadError(this)" data-src="/f/lists-330/fab59408-d8f8-4370-b0d9-8fd765ab30af.jpg" src="/i/b.png" /></div>
+				<div class="list-name">The Great Books Guide&#39;s 100 Greatest Novels</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 100
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="265455">
+			<a class="listCard" href="/how-widely-read-are-you" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="How Well Read Are You?" onerror="ImageLoadError(this)" data-src="/f/lists-330/3e2e2d63-fa2e-4f8f-80b4-acd497397c51.jpg" src="/i/b.png" /></div>
+				<div class="list-name">How Well Read Are You?</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 200
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
+	
+		<div class="list-repeater-list " data-list-id="267942">
+			<a class="listCard" href="/mycollection" >
+				<div class="list-image-wrapper"><img class="lazy-load" alt="What Books Have You  Read?" onerror="ImageLoadError(this)" data-src="/f/lists-330/62c8143d-610e-4bbd-ad59-2fdb226fd95e.jpg" src="/i/b.png" /></div>
+				<div class="list-name">What Books Have You  Read?</div>
+				<div class="list-repeater-info">
+					<div class="list-repeater-info-left">
+						<span class="glyphicon glyphicon-user"></span> 6 today
+					</div>
+					<div class="list-repeater-info-middle">
+						
+					</div>
+					<div class="list-repeater-info-right">
+						<span class="glyphicon glyphicon-book "></span> 500
+					</div>
+				</div>
+				
+			</a>
+		</div>
+		
 	</div>
-</body>
+
+			<div class="pageButtons  pageButtons-showNext">
+				<div class="pageButtons-page">
+					Page 1 of 20
+				</div>
+				<a href="/lists/books/trending/0" class="btn btn-default btn-lg pageButtons-previous"><span class="glyphicon glyphicon-arrow-left"></span> Previous</a>
+				<a href="/lists/books/trending/2" class="btn btn-primary btn-lg pageButtons-next">Next Page <span class="glyphicon glyphicon-arrow-right"></span></a>
+			</div>
+
+		</div>
+
+	</div>
+
+	
+
+			<div class="hhhh cb"></div>
+
+			
+			<footer>
+				<div class="content-wrapper">
+					<div class="social">
+						<a href="https://www.facebook.com/listchallenges"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-facebook-circled"></use></svg></i></a>
+						<a href="https://www.pinterest.com/listchallenges"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-pinterest-logo"></use></svg></i></a>
+						
+						<a href="https://www.youtube.com/channel/UC2nCmL5P2aH3KDYiNmJGljw"><i class="svgIcon "><svg><use xlink:href="/i/icons.svg#icon-youtube-play-button-logo"></use></svg></i></a>
+					</div>
+					<div class="text">
+						<a href="/subscribe">Newsletter</a> &middot;
+						<a href="/help">Help/Contact</a> &middot;
+						<a href="/privacy">Privacy</a> &middot;
+						<a href="/contact/copyright">Copyright&nbsp;Claim</a>&nbsp;&nbsp;
+						<div class="hidden-lg"></div>
+						&copy;&nbsp;2020 App Spring, Inc.
+						&middot;
+						This product uses the <a href="https://www.themoviedb.org" target="_blank">TMDb&nbsp;API</a> but is not endorsed or certified by TMDb.
+					</div>
+				</div>
+			</footer>
+
+		
+</div>
+
+
+		
+
+
+		
+
+		
+
+
+		
+
+		<div class="modal" id="modalItemInfo" role="dialog" aria-hidden="true" onclick="app.closeModal(event);">
+			<div class="modal-content modal-lg" style="">
+				<div class="modal-header">
+					<span class="close" onclick="app.closeModal();"></span>
+					<h3>Item Info</h3>
+				</div>
+				<div class="modal-body">
+				</div>
+			</div>
+		</div>
+
+
+		
+        		
+		<script>
+SERVER_APP = {
+  "Version": "1.0",
+  "RequiredComponents": [
+    "header"
+  ],
+  "DisplayDebug": false,
+  "IsSoundOn": false,
+  "UserLoggedIn": false,
+  "UserIsAdmin": false,
+  "FirstTimeVisitor": true
+};
+SERVER_PAGE = {};
+Domain='www.listchallenges.com';Device='desktop';LoggedIn=false;
+</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+
+		<script src="/bundles/app-scripts?v=gVFTQ6JiRJvX8jOmE-P46T4xqTFj9W4TN2hXQS8LrJU1"></script>
+
+
+		
+
+		<script>
+			// global document ready
+			$(function () {
+				app.$onInit();
+				//app.$onInitAlways();
+			});
+		</script>
+
+		
+
+		
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+
+		
+
+	</form>
+	
+		</body>
 </html>
